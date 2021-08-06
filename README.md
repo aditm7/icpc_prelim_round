@@ -1,1 +1,0 @@
-# icpc_prelim_round
