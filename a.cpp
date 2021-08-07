@@ -59,7 +59,15 @@ ll fact(ll N , ll MOD=mod){ ll P=1;if (N == 0) return 1; else { for(int i=1;i<=N
 int digits(ll N,ll base=2){ if(N==0) return 1; else if(base==10) return floor(log10(N))+1;else return floor(log2(N))+1; }
 
 void solve(){
-  
+  string s;
+  cin>>s;
+  int ans=0;
+  rep(i,0,sz(s)){
+    if(s[i]=='M') ans=1;
+    else if(s[i]=='U'&&ans==1) ans=2;
+    if(ans==2) break;
+  }
+  cout<<(ans==2?"Yes":"No")<<endl;
 }
 
 int main(){
