@@ -1,7 +1,12 @@
 //Test_case #1:
+Line(100) odd = [ 1 ]
  
 //Test_case #2:
+Line(100) odd = [ 1 ]
  
 //Test_case #3:
+Line(100) odd = [ 3 ]
+ 
+//Test_case #4:
  
 Time taken: 0 ms

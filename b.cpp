@@ -59,7 +59,46 @@ ll fact(ll N , ll MOD=mod){ ll P=1;if (N == 0) return 1; else { for(int i=1;i<=N
 int digits(ll N,ll base=2){ if(N==0) return 1; else if(base==10) return floor(log10(N))+1;else return floor(log2(N))+1; }
 
 void solve(){
-  
+  cii(n,x);
+  if(x==0&&n%2==1){
+    cout<<-1<<endl;
+    return;
+  }
+  vll odd;
+  ll temp=n;
+  ll posi=0;
+  while(temp){
+    if (temp&1){
+      if(posi&1) odd.pb(posi);
+      else if(posi!=0){
+        odd.pb(posi-1);
+        odd.pb(posi-1);
+      }
+    }
+    posi++;
+    temp=temp/2;
+  }
+  sort(all(odd));
+  ll arb=0;
+  ll ans=sz(odd);
+  bool flag=true;
+  if(n%2==1){ 
+    arb++;
+    ans++;
+    flag=false;
+  }
+  ll index=0;
+  while(index<sz(odd)){
+    if((arb+(1<<odd[index]))<=x){
+      arb+=(1<<odd[index]);
+      if(!flag) ans--;
+      index++;
+      flag=false;
+    }
+    else break;
+  }
+  debug(odd);
+  cout<<ans<<endl;
 }
 
 int main(){
